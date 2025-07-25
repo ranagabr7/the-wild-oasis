@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import Checkbox from "../../ui/Checkbox";
 import { formatCurrency } from "../../utils/helpers";
 import { useCheckin } from "./useCheckin";
-import { useSettings } from "../settings/useSEttings";
+import { useSettings } from "../settings/useSettings";
 const Box = styled.div`
   /* Box */
   background-color: var(--color-grey-0);
