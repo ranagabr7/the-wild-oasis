@@ -32,6 +32,7 @@ function LoginForm() {
       <FormRowVertical label="Email address">
         <Input
           type="email"
+          placeholder="test100@gmail.com"
           id="email"
           disabled={isLogin}
           // This makes this form better for password managers
@@ -44,6 +45,7 @@ function LoginForm() {
         <Input
           type="password"
           id="password"
+          placeholder="test100"
           disabled={isLogin}
           autoComplete="current-password"
           value={password}

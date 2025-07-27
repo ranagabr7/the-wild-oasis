@@ -10,6 +10,12 @@ export default function useUser() {
     queryKey: ["user"],
     queryFn: getCurrentUser,
   });
+  // console.log(user);
 
-  return { isPending, error, user, isAuthenticated:user?.role==='authenticated' };
+  return {
+    isPending,
+    error,
+    user,
+    isAuthenticated: user?.role === "authenticated",
+  };
 }

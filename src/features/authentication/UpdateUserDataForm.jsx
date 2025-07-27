@@ -7,10 +7,12 @@ import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import useUser from "./useUser";
 import { useUpdateUser } from "./useUpdateUser";
+import { useQueryClient } from "@tanstack/react-query";
 
 // import { useUser } from "./useUser";
 
 function UpdateUserDataForm() {
+  const queryClient=useQueryClient()
   // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
   const {
     user: {
@@ -31,6 +33,7 @@ function UpdateUserDataForm() {
         onSuccess: () => {
           setAvatar("");
           e.target.reset();
+          queryClient.invalidateQueries({queryKey:['user']})
         },
       }
     );
