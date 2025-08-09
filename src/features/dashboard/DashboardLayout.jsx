@@ -25,7 +25,7 @@ const DashboardLayout = () => {
   } = useRecentStays();
   const { cabins, isLoading: isLoading3 } = useCabins();
   if (isPending || isPendingRecentStays) return <Spinner />;
-  console.log(bookings);
+  // console.log(bookings);
 
   return (
     <StyledDashboardLayout>
