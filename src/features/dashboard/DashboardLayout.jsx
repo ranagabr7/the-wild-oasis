@@ -18,14 +18,12 @@ const StyledDashboardLayout = styled.div`
 const DashboardLayout = () => {
   const { bookings, isPending } = useRecentBooking();
   const {
-    stays,
     isPending: isPendingRecentStays,
     confirmedStays,
     numDays,
   } = useRecentStays();
-  const { cabins, isLoading: isLoading3 } = useCabins();
-  if (isPending || isPendingRecentStays) return <Spinner />;
-  // console.log(bookings);
+  const { cabins, isPending: isLoading3 } = useCabins();
+  if (isPending || isPendingRecentStays || isLoading3) return <Spinner />;
 
   return (
     <StyledDashboardLayout>
@@ -35,7 +33,7 @@ const DashboardLayout = () => {
         numDays={numDays}
         cabinCount={cabins.length}
       />
-     <TodayActivity/>
+      <TodayActivity />
       <DurationChart confirmedStays={confirmedStays} />
       <SalesChart bookings={bookings} numDays={numDays} />
     </StyledDashboardLayout>
